@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
+
+   public function index() {
+      return view('siswa.index');
+   }
+
+
+   public function create() {
+      return view('siswa.create');
+   }
+
    public function store (Request $request) {
       
       $request -> validate([
@@ -14,12 +24,12 @@ class SiswaController extends Controller
          'name'         => 'required',
          'nisn'         => 'required',
          'alamat'       => 'required',
-         'email'        => 'required',
+         'email'        => 'required | unique:users,email',
          'password'     => 'required',
          'no_handphone' => 'required',
       ]);
 
-      $datauser_store =[
+      $datauser_store = [
          'class_id'     => $request->kelas,
          'photo'         => 'photo.jpg',
          'name'         => $request->name,
