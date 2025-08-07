@@ -30,7 +30,7 @@
                 <td>
                     <a href="">detail</a>|
                     <a href="">edit</a>|
-                    <a href="">hapus</a>|
+                    <a href="/siswa/delete/{{ $siswa->id }}">hapus</a>|
                 </td>   
             </tr>
          @endforeach
