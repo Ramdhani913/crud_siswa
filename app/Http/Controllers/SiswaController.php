@@ -35,6 +35,7 @@ class SiswaController extends Controller
          'email'        => 'required | unique:users,email',
          'password'     => 'required',
          'no_handphone' => 'required | unique:users,no_handphone',
+         'photo'        =>'required',
       ]);
 
       $datauser_store = [
@@ -67,5 +68,19 @@ class SiswaController extends Controller
 
       //kembalikan user ke halaman beranda
       return redirect ('/');
+   }
+
+   //fungsi untuk detail siswa
+   public function show($id){
+      //cari data siswa dalam tabel user berdasarkan id yang dikirimkan
+      $datauser = User::find($id);
+      
+      //cek apakah datanya ada atau tidak
+      if ($datauser == null){
+      return redirect ('/');
+      }
+
+      //pindahkan user ke halaman detail siswa dengan mengirim
+      return view ('siswa.show',  compact('datauser'));
    }
  }

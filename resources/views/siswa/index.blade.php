@@ -28,9 +28,9 @@
                 <td>{{$siswa->clases->name}}</td>
                 <td>{{$siswa->alamat}}</td>
                 <td>
-                    <a href="">detail</a>|
+                    <a href="/siswa/show/{{ $siswa->id }}">detail</a>|
                     <a href="">edit</a>|
-                    <a href="/siswa/delete/{{ $siswa->id }}">hapus</a>|
+                    <a href="/siswa/delete/{{ $siswa->id }}" onclick="return confirm('yakin deck?')">hapus</a>|
                 </td>   
             </tr>
          @endforeach
