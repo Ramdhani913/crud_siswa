@@ -29,7 +29,7 @@
                 <td>{{$siswa->alamat}}</td>
                 <td>
                     <a href="/siswa/show/{{ $siswa->id }}">detail</a>|
-                    <a href="">edit</a>|
+                    <a href="/siswa/edit/{{ $siswa->id }}">edit</a>|
                     <a href="/siswa/delete/{{ $siswa->id }}" onclick="return confirm('yakin deck?')">hapus</a>|
                 </td>   
             </tr>
