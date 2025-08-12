@@ -10,7 +10,7 @@
     
 <img src="{{asset('storage/'.$datauser->photo)}}" width="80"><br>
 <br>
-<form action="/siswa/store" method="post" enctype="multipart/form-data">
+<form action="/siswa/update/{{$datauser->id}}" method="post" enctype="multipart/form-data">
   @csrf  
     <div>
         <label for="kelas">Kelas kink:</label>
@@ -72,7 +72,7 @@
         <label for="photo">Photo:</label><br>
         <input type="file" name="photo">
     </div><br>
-    <button type="submit">simpan</button><br>
+    <button type="submit" onclick="return confirm('yakin deck?')">simpan</button><br>
     <br>
 </form>
 <a href="/"><button>kembali</button></a>
