@@ -97,4 +97,31 @@ class SiswaController extends Controller
 
       return view ('siswa.edit', compact('datauser', 'clases'));
    }
+
+   public function update(Request $request, $id){
+
+       $request -> validate([
+         'kelas'     => 'required',
+         'name'         => 'required',
+         'nisn'         => 'required',
+         'alamat'       => 'required',
+         'email'        => 'required',
+         'no_handphone' => 'required',
+      ]);
+
+      $datauser = User::find($id);
+
+      $datauser_update = [
+         'class_id'     => $request->kelas,
+         'name'         => $request->name,
+         'nisn'         => $request->nisn,
+         'alamat'       => $request->alamat,
+         'email'        => $request->email,
+         'no_handphone' => $request->no_handphone,
+      ];
+
+      $datauser->update($datauser_update);
+
+      return redirect('/');
+   }
  }
