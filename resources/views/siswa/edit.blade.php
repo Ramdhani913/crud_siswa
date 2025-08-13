@@ -18,7 +18,7 @@
         <select name="kelas">
             @foreach ($clases as $clas)
             <option value="{{ $clas->id }}">{{$clas->name}}</option>
-            @endforeach
+            @endforeach                                                             
 
         </select><br>
         @error('kelas')
