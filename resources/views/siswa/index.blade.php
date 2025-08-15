@@ -11,8 +11,8 @@
     <table border="1">
         <thead>
             <tr>
-                <th>photo</th>
-                <th>nama</th>
+                <th></th>
+                <th>nama</th>photo
                 <th>NISN</th>
                 <th>kelas</th>
                 <th>alamat</th>
@@ -38,5 +38,6 @@
     </table>
     <br>
     <a href="/siswa/create"><button>Tambah Data Siswa</button></a>
+    <a href="/clas"><button>Halaman Kelas</button></a>
 </body>
 </html>

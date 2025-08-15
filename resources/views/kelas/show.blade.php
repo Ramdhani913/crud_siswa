@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Kelas</title>
+</head>
+<body>
+    <h1>Detail Kelas</h1>
+    Nama Kelas: <br>
+    {{$dataclas->name}}<br>
+    <br>
+    deskripsi kelas:<br>
+    {{$dataclas->description}}<br>
+    <br>
+    Siswa :<br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>foto</th>
+                <th>nama</th>
+                <th>nisn</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach ($datauser as $user)  
+            <tr>          
+                <td><img src="{{ optional($user)->photo ? asset('storage/'.$user->photo) : '' }}" width="60"></td>      
+                <td>{{ optional($user)->name }}</td>
+                <td>{{ optional($user)->nisn }}</td>  
+            </tr>
+         @endforeach
+        </tbody>
+    </table>
+    <a href="/clas"><button>kembali</button></a>
+</body>
+</html>
