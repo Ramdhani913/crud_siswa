@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClasController;
 use App\Http\Controllers\SiswaController;
 
 Route::get('/', [SiswaController::class, 'index']);
@@ -21,3 +22,19 @@ Route::post('/siswa/update/{id}', [SiswaController::class, 'update']);
 Route::get('/la', function () {
     return view('welcome');
 });
+
+
+//controller kelas
+Route::get('/clas', [ClasController::class, 'index']);
+
+Route::get('/clas/create', [ClasController::class, 'create']);
+
+Route::post('/clas/store', [ClasController::class, 'store']);
+
+Route::get('/clas/delete/{id}', [ClasController::class, 'destroy']);
+
+Route::get('/clas/show/{id}', [ClasController::class, 'show']);
+
+Route::get('/clas/edit/{id}', [ClasController::class, 'edit']);
+
+Route::post('/clas/update/{id}', [ClasController::class, 'update']);
