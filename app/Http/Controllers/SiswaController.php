@@ -44,7 +44,7 @@ class SiswaController extends Controller
          'nisn'         => $request->nisn,
          'alamat'       => $request->alamat,
          'email'        => $request->email,
-         'password'     => $request->password,
+         'password'     => bcrypt ($request->password),
          'no_handphone' => $request->no_handphone,
       ];
 
@@ -80,7 +80,7 @@ class SiswaController extends Controller
       return redirect ('/');
       }
 
-      //pindahkan user ke halaman detail siswa dengan mengirim
+      //pindahkan user ke halaman detail siswa djengan mengirim
       return view ('siswa.show',  compact('datauser'));
    }
 
@@ -119,6 +119,15 @@ class SiswaController extends Controller
          'email'        => $request->email,
          'no_handphone' => $request->no_handphone,
       ];
+
+      if ($request->password != null){
+         $datauser['password'] =  bcrypt ($request->password);
+      }
+
+      if ($request->hasfile('photo')){
+      Storage::disk('public')->delete($datauser->photo);
+      $datauser_update['photo'] = $request->file('photo')->store('profilesiswa', 'public');
+      }
 
       $datauser->update($datauser_update);
 

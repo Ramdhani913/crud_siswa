@@ -18,3 +18,6 @@ Route::get('/siswa/edit/{id}', [SiswaController::class, 'edit']);
 
 Route::post('/siswa/update/{id}', [SiswaController::class, 'update']);
 
+Route::get('/la', function () {
+    return view('welcome');
+});
