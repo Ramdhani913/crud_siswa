@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')    
+@section('title')
+<title>Halaman Tambah Siswa</title>
+@endsection         
+@section('content')                                               
     <h1>Halaman Tambah</h1><br>
     
 
@@ -76,3 +73,4 @@
 <a href="/"><button>kembali</button></a>
 </body>
 </html>
+@endsection

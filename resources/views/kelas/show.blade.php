@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Kelas</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+<title>Halaman Show Kelas</title>
+@endsection
+@section('content')
     <h1>Detail Kelas</h1>
     Nama Kelas: <br>
     {{$dataclas->name}}<br>
@@ -33,5 +30,4 @@
         </tbody>
     </table>
     <a href="/clas"><button>kembali</button></a>
-</body>
-</html>
+@endsection

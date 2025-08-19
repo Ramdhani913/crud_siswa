@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Beranda</h1>
+@extends('layouts.app')
+@section('title')
+<title>Halaman Index Siswa</title>
+@endsection
+@section('content')
+<h1>Beranda</h1>
     <p>List Data Siswa</p>
     <table border="1">
         <thead>
@@ -38,6 +35,4 @@
     </table>
     <br>
     <a href="/siswa/create"><button>Tambah Data Siswa</button></a>
-    <a href="/clas"><button>Halaman Kelas</button></a>
-</body>
-</html>
+@endsection
